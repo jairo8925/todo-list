@@ -1,0 +1,35 @@
+<h2>Description</h2>
+
+<p>Our app cannot store the tasks yet, so they disappear when you reload the page. Let's fix this. We will use local storage to store the tasks. The <code class="language-javascript">localStorage</code> property allows saving key/value pairs right in a web browser.</p>
+
+<p>You can save task lists as an object array. Each object should contain information about the task. As local storage can store only string values, we need to <strong>jsonify </strong>the array before saving it:</p>
+
+<pre><code class="language-javascript">let taskList = [
+    // .. tasks objects
+]
+
+localStorage.setItem("tasks", JSON.stringify(list))</code></pre>
+
+<p>To retrieve the task list as an array, use the <code class="language-javascript">JSON.parse()</code> method:</p>
+
+<pre><code class="language-javascript">let taskList = JSON.parse(localStorage.getItem("tasks")) || [];</code></pre>
+
+<p>The <code class="language-javascript">|| []</code> part indicates that if there are no tasks in the local storage, the method will return an empty array.</p>
+
+<h2>Objectives</h2>
+
+<p>We need to make our program fetch the to-do list from local storage and display the tasks with their states. Also, we need to make the program update the task list in local storage in the following cases:</p>
+
+<ul>
+    <li>A task is created.</li>
+    <li>A task is deleted.</li>
+    <li>A task is marked as complete.</li>
+</ul>
+
+<p>We don't need the hardcoded tasks anymore, so you can delete them. When users reload the page, the program should store the tasks.</p>
+
+<h2>Examples</h2>
+
+<p><strong>Example 1</strong>: <em>An example of a To-Do List</em></p>
+
+<p><img alt="" src="https://ucarecdn.com/b99f1127-3379-474e-bc5c-d693b051dbba/"></p>

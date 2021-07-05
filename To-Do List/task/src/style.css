@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+html, body {
+    min-height: 100vh;
+    background: whitesmoke no-repeat fixed;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    text-align: center;
+}
+
+#input-task {
+    width: 640px;
+    height: 40px;
+    font-size: 16pt;
+}
+
+#add-task-button {
+    font-weight: bold;
+    width: 140px;
+    margin-left: auto;
+}
+
+.task-list-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+}
+
+#task-list li {
+    line-height: 3em;
+}
+
+.delete-btn {
+    color: white;
+    float: right;
+    background-color: red;
+    margin-left: 400px;
+    margin-top: 12.5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
+    border-color: transparent;
+}
+
+.task {
+    margin-left: 15px;
+}
