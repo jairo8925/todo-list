@@ -53,6 +53,10 @@ h1 {
     line-height: 3em;
 }
 
+input[type=checkbox]:checked + .task {
+    text-decoration: line-through;
+}
+
 .delete-btn {
     color: white;
     float: right;

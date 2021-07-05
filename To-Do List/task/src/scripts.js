@@ -23,9 +23,6 @@ function setDeleteButtons() {
 
 
 function addNewListElement(text) {
-   return ("<li>\n" +
-       "                <label><input type=\"checkbox\"></label>\n" +
-       "                <span class=\"task\">" + text + "</span>\n" +
-       "                <button class=\"delete-btn\"> X </button>\n" +
-       "            </li>");
+   return ("<li><label><input type=\"checkbox\"><span class=\"task\">" + text +
+         "</span></label><button class=\"delete-btn\"> X </button></li>");
 }

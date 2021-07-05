@@ -127,11 +127,48 @@ async function stageTest() {
             for (let task of tasks) {
                 const taskName = task.querySelector("span.task")
                 if (taskName === null)
-                    return hs.wrong("Inside each <li> tag should one <spane> tag with 'task' class")
+                    return hs.wrong("Inside each <li> tag should one <span> tag with 'task' class")
 
                 if (taskName.textContent === "New task for the test purpose") {
                     return hs.wrong("After deleting a task with name 'New task for the test purpose' it is still in the task list!")
                 }
+            }
+
+            return hs.correct()
+        },
+
+        // Test #6 - Check completed tasks
+        async () => {
+
+            const tasks = this.taskList.getElementsByTagName("li")
+
+            if (tasks.length !== 3)
+                return hs.wrong("After adding a new task to the To-Do list, there should be 3 <li> tags inside the <ul> list")
+
+            const task = tasks[1]
+
+            const checkbox = task.querySelector("input[type=checkbox]")
+
+            if (checkbox.checked) {
+                return hs.wrong("By default a checkbox should be unchecked!")
+            }
+
+            checkbox.click()
+
+            let taskName = task.querySelector("span.task")
+            if (taskName === null)
+                return hs.wrong("Inside each <li> tag should be one <span> tag with 'task' class")
+
+            if (!window.getComputedStyle(taskName).textDecoration.includes("line-through")) {
+                return hs.wrong("If checkbox is checked the task name should be crossed out.\n" +
+                    "The span tag with task name should have 'text-decoration: line-trough' style")
+            }
+
+            checkbox.click()
+
+            if (window.getComputedStyle(taskName).textDecoration.includes("line-through")) {
+                return hs.wrong("If checkbox is unchecked the task name shouldn't be crossed out.\n" +
+                    "The span tag with task name shouldn't have 'text-decoration: line-trough' style")
             }
 
             return hs.correct()
