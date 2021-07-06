@@ -5,7 +5,7 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="load()">
     <h1>To-Do List</h1>
     <div class="form">
         <label for="input-task"></label>
@@ -14,18 +14,6 @@
     </div>
     <div class="task-list-container">
         <ul id="task-list">
-            <li>
-                <label><input type="checkbox"><span class="task">Email David</span></label>
-                <button class="delete-btn"> X </button>
-            </li>
-            <li>
-                <label><input type="checkbox"><span class="task">Create ideal user persona guide</span></label>
-                <button class="delete-btn"> X </button>
-            </li>
-            <li>
-                <label><input type="checkbox"><span class="task">Set up A/B test</span></label>
-                <button class="delete-btn"> X </button>
-            </li>
         </ul>
     </div>
     <script src="scripts.js"></script>
