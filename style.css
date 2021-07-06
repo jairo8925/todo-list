@@ -53,7 +53,7 @@ h1 {
     line-height: 3em;
 }
 
-.finished {
+input[type='checkbox']:checked + .task {
     text-decoration: line-through;
 }
 
