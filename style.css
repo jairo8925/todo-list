@@ -27,9 +27,11 @@ h1 {
 }
 
 #add-task-button {
-    font-weight: bold;
     width: 140px;
     margin-left: auto;
+    background-color: deepskyblue;
+    font-size: 15pt;
+    border: 1px solid black;
 }
 
 #add-task-button:hover {
